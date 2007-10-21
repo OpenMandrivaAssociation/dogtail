@@ -5,7 +5,7 @@ Release: %mkrel 1
 License: GPL
 Group: System/X11
 URL: http://people.redhat.com/zcerza/dogtail/
-Source0: http://people.redhat.com/zcerza/%name/releases/%{name}-%{release}.tar.gz
+Source0: http://people.redhat.com/zcerza/%name/releases/%{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildArchitectures: noarch
 BuildRequires: python-devel desktop-file-utils
