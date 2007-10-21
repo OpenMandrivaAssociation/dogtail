@@ -6,9 +6,10 @@ License: GPL
 Group: System/X11
 URL: http://people.redhat.com/zcerza/dogtail/
 Source0: http://people.redhat.com/zcerza/%name/releases/%{name}-%{version}.tar.gz
+Patch0: dogtail-0.6.1-desktop-fix.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
-BuildArchitectures: noarch
-BuildRequires: python-devel desktop-file-utils
+BuildArch: noarch
+%py_requires -d
 Requires: xorg-x11-Xvfb
 
 %description
@@ -17,6 +18,7 @@ technologies to communicate with desktop applications.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 python ./setup.py build
@@ -28,12 +30,6 @@ python ./setup.py install -O2 --root=$RPM_BUILD_ROOT
 rm -fr $RPM_BUILD_ROOT%{_datadir}/doc/dogtail
 
 mkdir -p $RPM_BUILD_ROOT%{_menudir}
-
-desktop-file-install --vendor="" \
-  --remove-category="Application" \
-  --add-category="Utility" \
-  --add-category="Accessibility" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
