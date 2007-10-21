@@ -1,11 +1,11 @@
 Summary: GUI test tool and automation framework
 Name: dogtail
-Version: 0.6.0
+Version: 0.6.1
 Release: %mkrel 1
 License: GPL
 Group: System/X11
 URL: http://people.redhat.com/zcerza/dogtail/
-Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
+Source0: http://people.redhat.com/zcerza/%name/releases/%{name}-%{release}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildArchitectures: noarch
 BuildRequires: python-devel desktop-file-utils
@@ -29,18 +29,10 @@ rm -fr $RPM_BUILD_ROOT%{_datadir}/doc/dogtail
 
 mkdir -p $RPM_BUILD_ROOT%{_menudir}
 
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}):command="%{_bindir}/sniff" \
-needs="gnome" section="More Applications/Accessibility" title="AT-SPI Browser" \
-longtitle="Browse your Assistive Technology-enabled desktop" icon="dogtail-head-48.png" \
-xdg="true"
-EOF
-
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --add-category="Utility" \
   --add-category="Accessibility" \
-  --add-category="X-MandrivaLinux-MoreApplications-Accessibility" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 %clean
@@ -48,11 +40,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %{update_menus}
-gtk-update-icon-cache --force --quiet %{_datadir}/icons/hicolor
+%update_icon_cache hiclor
 
 %postun
 %{clean_menus}
-gtk-update-icon-cache --force --quiet %{_datadir}/icons/hicolor
+%clean_icon_cache hicolor
 
 %files 
 %defattr(-,root,root,-)
@@ -62,7 +54,4 @@ gtk-update-icon-cache --force --quiet %{_datadir}/icons/hicolor
 %{_datadir}/dogtail
 %{py_puresitedir}/dogtail
 %{py_puresitedir}/*.egg-info
-%{_menudir}/*
 %{_iconsdir}/hicolor/*/apps/*
-
-
