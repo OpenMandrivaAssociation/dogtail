@@ -1,7 +1,7 @@
 Summary: GUI test tool and automation framework
 Name: dogtail
 Version: 0.6.1
-Release: %mkrel 3
+Release: %mkrel 4
 License: GPL
 Group: System/X11
 URL: http://people.redhat.com/zcerza/dogtail/
@@ -12,6 +12,8 @@ BuildRequires: ImageMagick
 BuildArch: noarch
 %py_requires -d
 Requires: x11-server-xvfb
+Requires: python-rpm
+Requires: python-spi
 
 %description
 GUI test tool and automation framework that uses Accessibility (a11y) 
