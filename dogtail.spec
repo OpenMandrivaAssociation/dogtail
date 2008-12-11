@@ -8,7 +8,7 @@ URL: http://people.redhat.com/zcerza/dogtail/
 Source0: http://people.redhat.com/zcerza/%name/releases/%{name}-%{version}.tar.gz
 Patch0: dogtail-0.6.1-desktop-fix.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
-BuildRequires: ImageMagick
+BuildRequires: imagemagick
 BuildArch: noarch
 %py_requires -d
 Requires: x11-server-xvfb
