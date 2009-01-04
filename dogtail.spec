@@ -1,7 +1,7 @@
 Summary: GUI test tool and automation framework
 Name: dogtail
 Version: 0.6.1
-Release: %mkrel 5
+Release: %mkrel 6
 License: GPL
 Group: System/X11
 URL: http://people.redhat.com/zcerza/dogtail/
