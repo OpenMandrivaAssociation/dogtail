@@ -1,19 +1,19 @@
 Summary: GUI test tool and automation framework
 Name: dogtail
-Version: 0.6.1
-Release: %mkrel 6
-License: GPL
+Version: 0.7.0
+Release: %mkrel 1
+License: GPLv2
 Group: System/X11
-URL: http://people.redhat.com/zcerza/dogtail/
-Source0: http://people.redhat.com/zcerza/%name/releases/%{name}-%{version}.tar.gz
+URL: https://fedorahosted.org/dogtail/
+Source0: https://fedorahosted.org/released/dogtail/%{name}-%{version}.tar.gz
 Patch0: dogtail-0.6.1-desktop-fix.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 BuildRequires: imagemagick
 BuildArch: noarch
 %py_requires -d
-Requires: x11-server-xvfb
 Requires: python-rpm
 Requires: python-spi
+Requires: python-imaging
 
 %description
 GUI test tool and automation framework that uses Accessibility (a11y) 
@@ -54,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files 
 %defattr(-,root,root,-)
-%doc COPYING examples
+%doc COPYING examples NEWS
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/dogtail
