@@ -1,7 +1,7 @@
 Summary: GUI test tool and automation framework
 Name: dogtail
 Version: 0.7.0
-Release: %mkrel 1
+Release: %mkrel 2
 License: GPLv2
 Group: System/X11
 URL: https://fedorahosted.org/dogtail/
@@ -12,8 +12,10 @@ BuildRequires: imagemagick
 BuildArch: noarch
 %py_requires -d
 Requires: python-rpm
-Requires: python-spi
+Requires: python-at-spi
 Requires: python-imaging
+Requires: pygtk2.0-libglade
+Requires: gnome-python
 
 %description
 GUI test tool and automation framework that uses Accessibility (a11y) 
