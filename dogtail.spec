@@ -1,7 +1,7 @@
 Summary: GUI test tool and automation framework
 Name: dogtail
 Version: 0.7.0
-Release: %mkrel 3
+Release: %mkrel 4
 License: GPLv2
 Group: System/X11
 URL: https://fedorahosted.org/dogtail/
