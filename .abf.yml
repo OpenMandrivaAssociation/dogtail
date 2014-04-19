@@ -1,2 +1,4 @@
+removed_sources:
+  dogtail-0.7.0.tar.gz: 9e218b36923c6799bd00af88155ebca67474b085
 sources:
-  "dogtail-0.7.0.tar.gz": 9e218b36923c6799bd00af88155ebca67474b085
+  dogtail-0.9.0.tar.gz: 4b230b511ac2c0f5a252c33413397fcf9dca3039
