@@ -1,0 +1,9 @@
+diff -Naur dogtail-0.9.0.orig/sniff/sniff.desktop dogtail-0.9.0/sniff/sniff.desktop
+--- dogtail-0.9.0.orig/sniff/sniff.desktop	2014-05-15 14:42:18.134480355 +0400
++++ dogtail-0.9.0/sniff/sniff.desktop	2014-05-15 14:42:54.048426557 +0400
+@@ -11,4 +11,4 @@
+ Type=Application
+ Icon=dogtail-head
+ StartupNotify=true
+-Categories=Application;Development;
++Categories=Development;Building;Accessibility;Utility;
